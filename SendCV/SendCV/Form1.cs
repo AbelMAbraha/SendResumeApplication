@@ -57,7 +57,8 @@ namespace SendCV
                 string companyEmail = dgrv.Cells["companyEmail"].Value.ToString();
                 string occupation = dgrv.Cells["occupation"].Value.ToString().ToLower();
                 string companyName = dgrv.Cells["companyName"].Value.ToString();
-                MailMessageInformation mmi = new MailMessageInformation(emailAccount.Text, companyEmail, occupation, companyName, emailPassword.Text, cvFile, subjectEmail.Text, body);
+                string subjectEmail = dgrv.Cells["Subject"].Value.ToString();
+                MailMessageInformation mmi = new MailMessageInformation(emailAccount.Text, companyEmail, occupation, companyName, emailPassword.Text, cvFile, subjectEmail, body);
             }
         }
 
